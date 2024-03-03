@@ -35,8 +35,8 @@
   <section class="prompt-generator">
     <div class="container">
       <h3>Generate Your Next Creative Challenge</h3>
-      <button class="btn">Generate Random Prompt</button>
-      <p class="example-prompt">Example prompt: "Write a poem inspired by the sound of rain"</p>
+      <button id="generate-btn" class="btn">Generate Random Prompt</button>
+      <p id="prompt-text" class="example-prompt"></p>
     </div>
   </section>
 
@@ -92,5 +92,31 @@
       <!-- Social media icons go here -->
     </div>
   </footer>
+
+  <!-- JavaScript Code -->
+  <script>
+    // Array of example prompts
+    const prompts = [
+      "Write a poem inspired by the sound of rain",
+      "Create a piece of art using only recycled materials",
+      "Capture a photograph that represents your current mood",
+      "Compose a short story set in a dystopian future",
+      "Design a logo for a fictional company"
+      // Add more prompts as needed
+    ];
+
+    // Function to generate a random prompt
+    function generateRandomPrompt() {
+      const randomIndex = Math.floor(Math.random() * prompts.length);
+      const prompt = prompts[randomIndex];
+      document.getElementById("prompt-text").textContent = `Example prompt: "${prompt}"`;
+    }
+
+    // Event listener for the "Generate Random Prompt" button
+    document.getElementById("generate-btn").addEventListener("click", generateRandomPrompt);
+
+    // Initial prompt generation on page load
+    generateRandomPrompt();
+  </script>
 </body>
 </html>
