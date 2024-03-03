@@ -36,7 +36,7 @@
     <div class="container">
       <h3>Generate Your Next Creative Challenge</h3>
       <button id="generate-btn" class="btn">Generate Random Prompt</button>
-      <p id="prompt-text" class="prompt"></p>
+      <p id="prompt-text" class="example-prompt"></p>
     </div>
   </section>
 
@@ -109,7 +109,7 @@
     function generateRandomPrompt() {
       const randomIndex = Math.floor(Math.random() * prompts.length);
       const prompt = prompts[randomIndex];
-      document.getElementById("prompt-text").textContent = `Example prompt: "${prompt}"`;
+      document.getElementById("prompt-text").textContent = `Prompt: "${prompt}"`;
     }
 
     // Event listener for the "Generate Random Prompt" button
